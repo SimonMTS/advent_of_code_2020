@@ -1,4 +1,4 @@
-package main
+package day1
 
 import (
 	"fmt"
@@ -8,8 +8,8 @@ import (
 	"sort"
 )
 
-func main() {
-	bytes , _ := ioutil.ReadFile("./day1_input.txt") // real
+func Run() {
+	bytes , _ := ioutil.ReadFile("day1/day1_input.txt") // real
 	// bytes , _ := ioutil.ReadFile("./day1_input_big.txt")
 	strings := strings.Split(string(bytes),"\n")
 
@@ -32,7 +32,7 @@ func main() {
 func part1(ints *[]int, c chan string) {
 	for i := 0; i < len(*ints); i++ {
 		if check((*ints)[i], 0, ints) {
-			c <- ("part1: " + strconv.Itoa((*ints)[i] * (2020 - (*ints)[i])))
+			c <- ("\tpart1: " + strconv.Itoa((*ints)[i] * (2020 - (*ints)[i])))
 			close(c)
 			return
 		}
@@ -44,7 +44,7 @@ func part2(ints *[]int, c chan string) {
 		go func(i int, ints *[]int, c chan string) {
 			for j := 0; j < len(*ints); j++ {
 				if check((*ints)[i], (*ints)[j], ints) {
-					c <- ("part2: " + strconv.Itoa((*ints)[i] * (*ints)[j] * (2020 - ((*ints)[i] + (*ints)[j]))))
+					c <- ("\tpart2: " + strconv.Itoa((*ints)[i] * (*ints)[j] * (2020 - ((*ints)[i] + (*ints)[j]))))
 					// close(c)
 				}
 			}

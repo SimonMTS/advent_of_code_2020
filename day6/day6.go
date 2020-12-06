@@ -1,14 +1,13 @@
-package main
+package day6
 
 import (
+	bp "advent_of_code_2020/boiler_plate"
 	"fmt"
-	"io/ioutil"
 	"strings"
 )
 
-func main() {
-	bytes , _ := ioutil.ReadFile("./day6_input.txt")
-	input_strings := strings.Split(string(bytes),"\n\n")
+func Run() {
+	input_strings := bp.GetNN("day6/day6_input.txt")
 	
 	sum_p1 := 0
 	sum_p2 := 0
@@ -34,6 +33,6 @@ func main() {
 		sum_p1 += len(qmap)
 	}
 
-	fmt.Print("\n sum part 1: "); fmt.Println(sum_p1)
-	fmt.Print("\n sum part 2: "); fmt.Println(sum_p2)
+	fmt.Print("\tsum part 1: "); fmt.Println(sum_p1)
+	fmt.Print("\tsum part 2: "); fmt.Println(sum_p2)
 }

@@ -1,30 +1,24 @@
-package main
+package day4
 
 import (
+	bp "advent_of_code_2020/boiler_plate"
 	"fmt"
 	"strconv"
-    "io/ioutil"
-	"strings"
 	"regexp"
 	"regexp2"
 )
 
-func main() {
-	bytes , _ := ioutil.ReadFile("./day4_input.txt")
-	input_strings := strings.Split(string(bytes),"\n\n")
-	for i, _ := range input_strings { for j, _ := range input_strings[i] {
-		if string(input_strings[i][j]) == "\n" {
-			out := []rune(input_strings[i])
-			out[j] = ' '
-			input_strings[i] = string(out);
-		}
-	} }
+func Run() {
+	input_strings := bp.Ntos(bp.GetNN("day4/day4_input.txt"))
 
-	valid := 0
+	valid_p1 := 0; valid_p2 := 0
 	for _, s := range input_strings {
-		if isValid(s) { valid++ }
+		if isValid(s) { valid_p2++ }
+		if isValid_part1(s) { valid_p1++ }
 	}
-	fmt.Println(valid)
+
+	fmt.Print("\tpart1: "); fmt.Println(valid_p1)
+	fmt.Print("\tpart2: "); fmt.Println(valid_p2)
 }
 
 func isValid(s string) bool {

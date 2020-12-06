@@ -1,4 +1,4 @@
-package main
+package day1
 
 import (
 	"fmt"
@@ -8,8 +8,8 @@ import (
 	"regexp"
 )
 
-func main() {
-	bytes , _ := ioutil.ReadFile("./day2_input.txt")
+func Run() {
+	bytes , _ := ioutil.ReadFile("day2/day2_input.txt")
 	input_strings := strings.Split(string(bytes),"\n")
 
 	part1(&input_strings);
@@ -33,6 +33,7 @@ func part1(input_strings *[]string) {
 		}
 	}
 
+	fmt.Print("\tpart1: ")
 	fmt.Println(strconv.Itoa(valid_passwords))
 }
 
@@ -53,5 +54,6 @@ func part2(input_strings *[]string) {
 		}
 	}
 
+	fmt.Print("\tpart2: ")
 	fmt.Println(strconv.Itoa(valid_passwords))
 }
