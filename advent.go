@@ -8,15 +8,20 @@ import (
 	day5 "advent_of_code_2020/day5"
 	day6 "advent_of_code_2020/day6"
 	day7 "advent_of_code_2020/day7"
+	day8 "advent_of_code_2020/day8"
 	"fmt"
+	"os"
 	"strconv"
-    "os"
 )
 
 func main() {
 	day := 0
-	if (len(os.Args[1:]) == 1) {
-		day, _ = strconv.Atoi(os.Args[1])
+	if len(os.Args[1:]) == 1 {
+		if len(os.Args[1]) > 3 {
+			day, _ = strconv.Atoi(string(os.Args[1][len(os.Args[1])-1]))
+		} else {
+			day, _ = strconv.Atoi(os.Args[1])
+		}
 	}
 
 	if day == 0 || day == 1 {
@@ -52,6 +57,11 @@ func main() {
 	if day == 0 || day == 7 {
 		fmt.Println("\n    day7")
 		day7.Run()
+	}
+
+	if day == 0 || day == 8 {
+		fmt.Println("\n    day8")
+		day8.Run()
 	}
 
 	fmt.Println("")
