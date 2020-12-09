@@ -1,39 +1,58 @@
-package boiler_plate
+package boilerplate
 
 import (
 	"io/ioutil"
+	"strconv"
 	"strings"
 )
 
+// Get gets input from file as single string
 func Get(input string) string {
-	bytes , err := ioutil.ReadFile(input)
-	if err != nil { panic(err) }
+	bytes, err := ioutil.ReadFile(input)
+	if err != nil {
+		panic(err)
+	}
 
 	return string(bytes)
 }
 
+// GetC gets input from file and splits on ""
 func GetC(input string) []string {
-	return strings.Split(Get(input),"")
+	return strings.Split(Get(input), "")
 }
 
+// GetN gets input from file and splits on "\n"
 func GetN(input string) []string {
-	return strings.Split(Get(input),"\n")
+	return strings.Split(Get(input), "\n")
 }
 
+// GetNN gets input from file and splits on "\n\n"
 func GetNN(input string) []string {
-	return strings.Split(Get(input),"\n\n")
+	return strings.Split(Get(input), "\n\n")
 }
 
-func Ntos(input_strings []string) []string {
-	for i, _ := range input_strings {
-		for j, _ := range input_strings[i] {
-			if string(input_strings[i][j]) == "\n" {
-				out := []rune(input_strings[i])
+// Ntos changes all newlines to spaces
+func Ntos(inputStrings []string) []string {
+	for i := range inputStrings {
+		for j := range inputStrings[i] {
+			if string(inputStrings[i][j]) == "\n" {
+				out := []rune(inputStrings[i])
 				out[j] = ' '
-				input_strings[i] = string(out);
+				inputStrings[i] = string(out)
 			}
 		}
 	}
 
-	return input_strings
+	return inputStrings
+}
+
+// Atoi treats all lines as numbers, and converts them to ints
+func Atoi(inputStrings []string) []int {
+	inputInts := make([]int, len(inputStrings))
+	for i, s := range inputStrings {
+		asInt, _ := strconv.Atoi(s)
+		inputInts[i] = asInt
+	}
+
+	return inputInts
 }

@@ -25,10 +25,8 @@ func Run() {
 		}
 	}
 
-	fmt.Print("\tpart 1: ")
-	fmt.Println(sum)
-	fmt.Print("\tpart 2: ")
-	fmt.Println(countSubBags("shiny gold", &bags))
+	fmt.Println("\tpart 1:", sum)
+	fmt.Println("\tpart 2:", countSubBags("shiny gold", &bags))
 }
 
 func containsShinyGold(key string, bags *map[string][]string) bool {

@@ -25,18 +25,17 @@ func Run() {
 
 		flipOP(j, &inputStrings)
 	}
-
 }
 
 func runUntilRepeat(inputStrings []string) (i, accumulator int) {
-	executed := make(map[int]string)
+	executed := make(map[int]bool)
 	i, accumulator = 0, 0
 	for ; i < len(inputStrings); i++ {
 		if _, ok := executed[i]; ok {
 			break
 		}
 
-		executed[i] = inputStrings[i]
+		executed[i] = true
 		parts := strings.Split(inputStrings[i], " ")
 		if parts[0] == "acc" {
 			inc, _ := strconv.Atoi(parts[1])
@@ -46,7 +45,6 @@ func runUntilRepeat(inputStrings []string) (i, accumulator int) {
 			i = (i - 1) + inc
 		}
 	}
-
 	return
 }
 

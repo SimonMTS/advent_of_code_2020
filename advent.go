@@ -9,6 +9,10 @@ import (
 	day6 "advent_of_code_2020/day6"
 	day7 "advent_of_code_2020/day7"
 	day8 "advent_of_code_2020/day8"
+	day9 "advent_of_code_2020/day9"
+
+	// day10 "advent_of_code_2020/day10"
+	// day11 "advent_of_code_2020/day11"
 	"fmt"
 	"os"
 	"strconv"
@@ -62,6 +66,21 @@ func main() {
 	if day == 0 || day == 8 {
 		fmt.Println("\n    day8")
 		day8.Run()
+	}
+
+	if day == 0 || day == 9 {
+		fmt.Println("\n    day9")
+		day9.Run()
+	}
+
+	if day == 0 || day == 10 {
+		fmt.Println("\n    day10")
+		// day10.Run()
+	}
+
+	if day == 0 || day == 11 {
+		fmt.Println("\n    day11")
+		// day11.Run()
 	}
 
 	fmt.Println("")
