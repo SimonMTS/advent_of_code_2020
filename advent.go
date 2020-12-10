@@ -2,6 +2,7 @@ package main
 
 import (
 	day1 "advent_of_code_2020/day1"
+	day10 "advent_of_code_2020/day10"
 	day2 "advent_of_code_2020/day2"
 	day3 "advent_of_code_2020/day3"
 	day4 "advent_of_code_2020/day4"
@@ -10,8 +11,8 @@ import (
 	day7 "advent_of_code_2020/day7"
 	day8 "advent_of_code_2020/day8"
 	day9 "advent_of_code_2020/day9"
+	"strings"
 
-	// day10 "advent_of_code_2020/day10"
 	// day11 "advent_of_code_2020/day11"
 	"fmt"
 	"os"
@@ -22,7 +23,8 @@ func main() {
 	day := 0
 	if len(os.Args[1:]) == 1 {
 		if len(os.Args[1]) > 3 {
-			day, _ = strconv.Atoi(string(os.Args[1][len(os.Args[1])-1]))
+			a := strings.Split(os.Args[1], "\\")
+			day, _ = strconv.Atoi(string(a[len(a)-1][3:]))
 		} else {
 			day, _ = strconv.Atoi(os.Args[1])
 		}
@@ -75,7 +77,7 @@ func main() {
 
 	if day == 0 || day == 10 {
 		fmt.Println("\n    day10")
-		// day10.Run()
+		day10.Run()
 	}
 
 	if day == 0 || day == 11 {
