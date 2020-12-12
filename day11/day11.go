@@ -23,8 +23,8 @@ func Run() {
 		}
 	}
 
-	fmt.Println("\tpart1:", doSim(4, seats1, input))
-	fmt.Println("\tpart2:", doSim(5, seats2, input))
+	fmt.Println("\tpart 1:", doSim(4, seats1, input))
+	fmt.Println("\tpart 2:", doSim(5, seats2, input))
 
 }
 

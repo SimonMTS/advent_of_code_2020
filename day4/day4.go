@@ -23,8 +23,8 @@ func Run() {
 		}
 	}
 
-	fmt.Println("\tpart1:", validP1)
-	fmt.Println("\tpart2:", validP2)
+	fmt.Println("\tpart 1:", validP1)
+	fmt.Println("\tpart 2:", validP2)
 }
 
 func isValid(s string) bool {

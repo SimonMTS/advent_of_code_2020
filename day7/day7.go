@@ -29,23 +29,33 @@ func Run() {
 	fmt.Println("\tpart 2:", countSubBags("shiny gold", &bags))
 }
 
+var cache = make(map[string]bool)
+
 func containsShinyGold(key string, bags *map[string][]string) bool {
+	if val, ok := cache[key]; ok {
+		return val
+	}
+
 	subBags := (*bags)[key]
 
 	for _, val := range subBags {
 		split := (regexp.MustCompile("\\d+\\s+")).Split(val, -1)[1:]
 
 		if len(split) == 0 {
+			cache[key] = false
 			return false
 		}
 		if split[0] == "shiny gold" {
+			cache[key] = true
 			return true
 		}
 		if containsShinyGold(split[0], bags) {
+			cache[key] = true
 			return true
 		}
 	}
 
+	cache[key] = false
 	return false
 }
 

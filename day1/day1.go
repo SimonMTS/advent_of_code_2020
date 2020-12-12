@@ -33,7 +33,7 @@ func Run() {
 func part1(ints *[]int, c chan string) {
 	for i := 0; i < len(*ints); i++ {
 		if check((*ints)[i], 0, ints) {
-			c <- ("\tpart1: " + strconv.Itoa((*ints)[i]*(2020-(*ints)[i])))
+			c <- ("\tpart 1: " + strconv.Itoa((*ints)[i]*(2020-(*ints)[i])))
 			close(c)
 			return
 		}
@@ -45,7 +45,7 @@ func part2(ints *[]int, c chan string) {
 		go func(i int, ints *[]int, c chan string) {
 			for j := 0; j < len(*ints); j++ {
 				if check((*ints)[i], (*ints)[j], ints) {
-					c <- ("\tpart2: " + strconv.Itoa((*ints)[i]*(*ints)[j]*(2020-((*ints)[i]+(*ints)[j]))))
+					c <- ("\tpart 2: " + strconv.Itoa((*ints)[i]*(*ints)[j]*(2020-((*ints)[i]+(*ints)[j]))))
 				}
 			}
 		}(i, ints, c)

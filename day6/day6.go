@@ -35,6 +35,6 @@ func Run() {
 		sumP1 += len(qmap)
 	}
 
-	fmt.Println("\tsum part 1:", sumP1)
-	fmt.Println("\tsum part 2:", sumP2)
+	fmt.Println("\tpart 1:", sumP1)
+	fmt.Println("\tpart 2:", sumP2)
 }

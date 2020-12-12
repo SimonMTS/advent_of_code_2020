@@ -34,7 +34,7 @@ func part1(inputStrings *[]string) {
 		}
 	}
 
-	fmt.Println("\tpart1:", strconv.Itoa(validPasswords))
+	fmt.Println("\tpart 1:", strconv.Itoa(validPasswords))
 }
 
 func part2(inputStrings *[]string) {
@@ -54,5 +54,5 @@ func part2(inputStrings *[]string) {
 		}
 	}
 
-	fmt.Println("\tpart2:", strconv.Itoa(validPasswords))
+	fmt.Println("\tpart 2:", strconv.Itoa(validPasswords))
 }

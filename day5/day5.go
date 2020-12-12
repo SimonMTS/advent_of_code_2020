@@ -16,7 +16,7 @@ func Run() {
 	lowest := int(^uint(0) >> 1)
 	highest := 0
 	sum := 0
-	fmt.Printf("\t%09d\n", len(inputStrings))
+	// fmt.Printf("\t%09d\n", len(inputStrings))
 	for i, s := range inputStrings {
 		id := codeToValues(s)
 		sum += id
@@ -28,7 +28,7 @@ func Run() {
 		}
 
 		if i%100000 == 0 {
-			fmt.Printf("\t%09d\r", i)
+			// fmt.Printf("\t%09d\r", i)
 		}
 	}
 
@@ -37,8 +37,9 @@ func Run() {
 		expectedSum += i
 	}
 
-	fmt.Println("\n\tpart1:", highest)
-	fmt.Println("\tpart2:", expectedSum-sum)
+	// fmt.Println("")
+	fmt.Println("\tpart 1:", highest)
+	fmt.Println("\tpart 2:", expectedSum-sum)
 }
 
 func codeToValues(code string) int {
