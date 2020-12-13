@@ -5,6 +5,7 @@ import (
 	day10 "advent_of_code_2020/day10"
 	day11 "advent_of_code_2020/day11"
 	day12 "advent_of_code_2020/day12"
+	day13 "advent_of_code_2020/day13"
 	day2 "advent_of_code_2020/day2"
 	day3 "advent_of_code_2020/day3"
 	day4 "advent_of_code_2020/day4"
@@ -88,6 +89,11 @@ func main() {
 	if day == 0 || day == 12 {
 		fmt.Println("\n    day12")
 		day12.Run()
+	}
+
+	if day == 0 || day == 13 {
+		fmt.Println("\n    day13")
+		day13.Run()
 	}
 
 	fmt.Println("")
